@@ -1,5 +1,5 @@
 import renderWeather from "./dom";
-import fetchWeather from "./fetch";
+import { fetchWeather, fetchCoordinates } from "./fetch";
 
 const initApp = () => {
   renderWeather(fetchWeather());

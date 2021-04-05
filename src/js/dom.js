@@ -1,7 +1,7 @@
 const renderWeather = async (weatherData) => {
   const info = await weatherData;
   const body = document.body;
-  body.textContent = info.weather[0].main;
+  body.textContent = info.current.weather[0].main;
   console.log(info);
 };
 
