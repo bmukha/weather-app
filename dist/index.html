@@ -1,19 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Weather app for The Odin Project</title>
-    <link rel="stylesheet" href="../src/css/style.css">
-</head>
-<body>
+    <link rel="stylesheet" href="../src/css/style.css" />
+  </head>
+  <body>
     <section id="app">
-        <form id="cityInput">
-            <input id ="cityInputText" type="text" placeholder="Enter your city">
-            <button id="submitCityButton" type="submit">Submit</button>
-          </form>
+      <form id="cityInput">
+        <input id="cityInputText" type="text" placeholder="Enter your city" />
+        <button id="submitCityButton" type="submit">Submit</button>
+      </form>
+      <div id="weather-wrapper">
+        <div id="current-weather"></div>
+      </div>
     </section>
     <script src="./bundle.js"></script>
-</body>
+  </body>
 </html>
