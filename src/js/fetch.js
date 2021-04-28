@@ -17,7 +17,7 @@ const fetchCoordinates = async (city = "Ivano-Frankivsk") => {
     currentSettings.lat = json.coord.lat;
     currentSettings.lon = json.coord.lon;
   } catch (error) {
-    console.log(error.message);
+    console.error(error.message);
   }
 };
 
@@ -27,9 +27,10 @@ const fetchWeather = async () => {
       `https://api.openweathermap.org/data/2.5/onecall?lat=${currentSettings.lat}&lon=${currentSettings.lon}&exclude=minutely,hourly,alerts&units=${currentSettings.units}&appid=${apiKey}`
     );
     const json = await response.json();
+    console.log(json);
     return json;
   } catch (error) {
-    console.log(error.message);
+    console.error(error.message);
   }
 };
 
