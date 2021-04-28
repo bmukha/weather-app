@@ -18,3 +18,9 @@ body {
     border-radius: 20px;
     place-self: center;
 }
+
+#daily-weather {
+    display: grid;
+    grid-template-columns: repeat(4, auto);
+    grid-template-rows: 2;
+}
