@@ -9,7 +9,7 @@ const initApp = async () => {
 const submitCityButton = document.getElementById("submitCityButton");
 submitCityButton.addEventListener("click", async (e) => {
   e.preventDefault();
-  const cityInputText = document.getElementById("cityInputText").value;
+  const cityInputText = document.getElementById("inputCityText").value;
   await fetchCoordinates(cityInputText);
   const weather = await fetchWeather();
   console.log(weather);

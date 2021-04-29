@@ -7,20 +7,49 @@
 body {
     height: 100vh;
     width: 100vw;
-    background-color: azure;
     display: grid;
 }
 
 #app {
+    background-color: rgb(199, 202, 202);
     min-width: 414px;
     min-height: 736px; 
     border: 1px solid black;
     border-radius: 20px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
     place-self: center;
 }
 
 #daily-weather {
     display: grid;
-    grid-template-columns: repeat(4, auto);
-    grid-template-rows: 2;
+    grid-template-columns: repeat(2, auto);
+    grid-template-rows: 4;
+    gap: 1rem;
+    margin: 1rem;
+    padding: 1rem;
+}
+
+.daily-wrapper {
+    background-color: rgb(165, 167, 167);
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
+
+#cityInput {
+    background-color: rgb(120, 122, 122);
+    margin: 1rem;
+    padding: 1rem;
+    border-radius: 20px;
+    box-shadow: 0 0 5px rgba(0,0,0,0.5);
+}
+
+#submitCityButton {
+    margin: 5px;
+    padding: 5px;
+    border-radius: 50%;
+}
+
+#inputCityText {
+    margin: 5px;
+    padding: 5px;
+    border-radius: 15px;
 }
