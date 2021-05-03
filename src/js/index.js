@@ -1,5 +1,5 @@
 import renderWeather from "./dom";
-import { fetchWeather, fetchCoordinates } from "./fetch";
+import { fetchWeather, fetchCoordinates, currentSettings } from "./fetch";
 
 const initApp = async () => {
   const weatherData = await fetchWeather();
@@ -14,6 +14,16 @@ submitCityButton.addEventListener("click", async (e) => {
   const weather = await fetchWeather();
   console.log(weather);
   renderWeather(weather);
+});
+
+const scaleToggle = document.getElementById("scaleToggle");
+scaleToggle.addEventListener("click", (e) => {
+  e.preventDefault();
+  document.getElementById("celsius").classList.toggle("active");
+  document.getElementById("fahrenheit").classList.toggle("active");
+  currentSettings.units =
+    currentSettings.units === "metric" ? "imperial" : "metric";
+    initApp();
 });
 
 initApp();

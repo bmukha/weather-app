@@ -13,7 +13,8 @@ body {
 #app {
     background-color: rgb(199, 202, 202);
     min-width: 414px;
-    min-height: 736px; 
+    min-height: 736px;
+    max-height: 100vh; 
     border: 1px solid black;
     border-radius: 20px;
     box-shadow: 0 0 10px rgba(0,0,0,0.5);
@@ -35,7 +36,9 @@ body {
 }
 
 #cityInput {
-    background-color: rgb(120, 122, 122);
+    display: flex;
+    justify-content: space-between;
+    background-color: rgb(165, 167, 167);
     margin: 1rem;
     padding: 1rem;
     border-radius: 20px;
@@ -48,8 +51,13 @@ body {
     border-radius: 50%;
 }
 
-#inputCityText {
+#inputCityText, #scaleToggle {
     margin: 5px;
     padding: 5px;
     border-radius: 15px;
+}
+
+.active {
+    font-weight: bold;
+    color:red;
 }

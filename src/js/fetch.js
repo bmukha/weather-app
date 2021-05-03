@@ -6,6 +6,8 @@ const currentSettings = {
   lat: 48.9215,
   lon: 24.7097,
   units: "metric",
+  city: "Ivano-Frankivsk",
+  correctLocation: true,
 };
 
 const fetchCoordinates = async (city = "Ivano-Frankivsk") => {
@@ -16,12 +18,19 @@ const fetchCoordinates = async (city = "Ivano-Frankivsk") => {
     const json = await response.json();
     currentSettings.lat = json.coord.lat;
     currentSettings.lon = json.coord.lon;
+    currentSettings.city = city;
+    currentSettings.correctLocation = true;
+    document.getElementById("inputCityText").value = "";
   } catch (error) {
+    document.getElementById("cityDisplay").innerHTML = "Location not found!";
+    document.getElementById("weather-wrapper").innerHTML = "";
+    currentSettings.correctLocation = false;
     console.error(error.message);
   }
 };
 
 const fetchWeather = async () => {
+  if (!currentSettings.correctLocation) return;
   try {
     const response = await fetch(
       `https://api.openweathermap.org/data/2.5/onecall?lat=${currentSettings.lat}&lon=${currentSettings.lon}&exclude=minutely,hourly,alerts&units=${currentSettings.units}&appid=${apiKey}`

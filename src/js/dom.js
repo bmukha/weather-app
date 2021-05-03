@@ -1,10 +1,15 @@
+import { currentSettings } from "./fetch";
+
+const currentScaleDisplay = () =>
+  currentSettings.units === "metric" ? "℃" : "℉";
+
 const DailyWeather = (
   temperature,
   humidity,
   pressure,
   pic
 ) => `<div class="daily-wrapper">
-  <div class='temperature'>Темп: ${temperature}℃</div>
+  <div class='temperature'>Темп: ${temperature + currentScaleDisplay()}</div>
   <div class='humidity'>Вол: ${humidity}</div>
   <div class='pressure'>Тиск: ${pressure}</div>
   <img src='http://openweathermap.org/img/wn/${pic}.png' id='current-pic'><img>
@@ -16,10 +21,15 @@ const renderWeather = async (weatherData) => {
   const currentWeatherInfo = info.current;
   const currentWeatherWrapper = document.getElementById("current-weather");
   const { temp, humidity, pressure } = currentWeatherInfo;
-  const currentWeatherContents = `<div id='current-temp'>${Math.round(temp)}℃</div>
+  document.getElementById("cityDisplay").innerText = currentSettings.city;
+  const currentWeatherContents = `<div id='current-temp'>${
+    Math.round(temp) + currentScaleDisplay()
+  }</div>
   <div id='current-humidity'>${Math.round(humidity)}</div>
   <div id='current-pressure'>${Math.round(pressure)}</div>
-  <img src='http://openweathermap.org/img/wn/${currentWeatherInfo.weather[0].icon}@2x.png' id='current-pic'><img>`;
+  <img src='http://openweathermap.org/img/wn/${
+    currentWeatherInfo.weather[0].icon
+  }@2x.png' id='current-pic'><img>`;
   currentWeatherWrapper.innerHTML = currentWeatherContents;
 
   const dailyWeatherWrapper = document.getElementById("daily-weather");
