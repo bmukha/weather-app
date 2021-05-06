@@ -23,7 +23,17 @@ scaleToggle.addEventListener("click", (e) => {
   document.getElementById("fahrenheit").classList.toggle("active");
   currentSettings.units =
     currentSettings.units === "metric" ? "imperial" : "metric";
-    initApp();
+  initApp();
 });
+
+window.onload = () => {
+  if (localStorage.getItem(currentSettings)) {
+    currentSettings = JSON.parse(localStorage.getItem(currentSettings));
+  }
+};
+
+window.onbeforeunload = () => {
+  localStorage.setItem("currentSettings", JSON.stringify(currentSettings));
+};
 
 initApp();

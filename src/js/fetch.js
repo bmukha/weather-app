@@ -2,7 +2,7 @@
 
 const apiKey = "9d04517f3c50b24e9da372b682d112d7";
 
-const currentSettings = {
+let currentSettings = {
   lat: 48.9215,
   lon: 24.7097,
   units: "metric",
