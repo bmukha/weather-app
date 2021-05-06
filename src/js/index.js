@@ -37,3 +37,10 @@ window.onbeforeunload = () => {
 };
 
 initApp();
+
+
+// const getDayName = (time) => {
+//   console.log (new Date(time).);
+// }
+
+// getDayName(1589220000);

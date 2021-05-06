@@ -72,12 +72,13 @@ body {
   background-color: rgb(165, 167, 167);
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
   display: grid;
-  grid-template-columns: 2;
-  grid-template-rows: 3;
+  grid-template-columns: 3;
+  grid-template-rows: 4;
   grid-template-areas:
-    "o m"
-    "p m"
-    "q m";
+    "t t t"
+    "o m m"
+    "p m m"
+    "q q q";
   gap: 0.5rem;
   padding: 0.5rem;
 }
@@ -100,10 +101,12 @@ body {
 
 #cityInput {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
+  align-content: center;
   background-color: rgb(165, 167, 167);
   margin: 1rem;
-  padding: 1rem;
+  padding: 0.5rem;
   border-radius: 20px;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
 }
@@ -127,9 +130,11 @@ body {
 }
 
 #cityDisplay {
-  margin: 0 auto;
+  margin: auto;
+  font-size: 1.5rem;
+  font-weight: 800;
 }
 
 #currtemp {
-  font-size: 5rem;
+  font-size: 4rem;
 }

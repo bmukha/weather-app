@@ -23,7 +23,8 @@ const fetchCoordinates = async (city = "Ivano-Frankivsk") => {
     document.getElementById("inputCityText").value = "";
   } catch (error) {
     document.getElementById("cityDisplay").innerHTML = "Location not found!";
-    document.getElementById("weather-wrapper").innerHTML = "";
+    document.getElementById("current-weather").innerHTML = "";
+    document.getElementById("daily-weather").innerHTML = "";
     currentSettings.correctLocation = false;
     console.error(error.message);
   }
